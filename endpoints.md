@@ -1,4 +1,12 @@
-# Http
+# Endpoints
+
+```sh
+    curl  http://localhost:8080/tasks/byPriority/low
+```
+
+```sh
+    curl  http://localhost:8080/tasks
+```
 
 ```sh
     curl  http://localhost:8080/ 
