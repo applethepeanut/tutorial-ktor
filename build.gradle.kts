@@ -19,6 +19,8 @@ repositories {
 }
 
 dependencies {
+    implementation("io.ktor:ktor-server-status-pages")
+    implementation(kotlin("stdlib")) // not sure if this is really needed :shrug:
     implementation(libs.ktor.server.core)
     implementation(libs.ktor.server.netty)
     implementation(libs.logback.classic)
