@@ -1,4 +1,4 @@
-package com.atpfury.example
+package com.tutorial.app
 
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
