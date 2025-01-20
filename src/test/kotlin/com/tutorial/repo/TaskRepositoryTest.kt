@@ -4,16 +4,17 @@ import com.tutorial.models.Priority
 import com.tutorial.models.Task
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import kotlin.test.assertContains
 import kotlin.test.assertFailsWith
 
 class TaskRepositoryTest {
 
-//    @Test
-//    fun `addTask adds a new task`() {
-//        val count = TaskRepository.allTasks().size
-//        TaskRepository.addTask(Task("some new task", "some description", Priority.High))
-//        assertEquals(count + 1, TaskRepository.allTasks().size)
-//    }
+    @Test
+    fun `addTask adds a new task`() {
+        val task = Task("some new task", "some description", Priority.High)
+        TaskRepository.addTask(task)
+        assertContains(TaskRepository.allTasks(), task)
+    }
 
     @Test
     fun `addTask fails when the name is empty`() {
@@ -46,11 +47,9 @@ class TaskRepositoryTest {
 
     @Test
     fun `tasksByPriority returns tasks with the given priority`() {
-        val expectedTasks = mutableListOf(
-            Task("shopping", "Buy the groceries", Priority.High)
-        )
+        val task = Task("shopping", "Buy the groceries", Priority.High)
         val highPriorityTasks = TaskRepository.tasksByPriority(Priority.High)
-        assertEquals(expectedTasks, highPriorityTasks)
+        assertContains(highPriorityTasks, task)
     }
 
     @Test
@@ -60,14 +59,11 @@ class TaskRepositoryTest {
 
     @Test
     fun `allTasks returns all the repo tasks`() {
-        val expectedTasks = mutableListOf(
-            Task("cleaning", "Clean the house", Priority.Low),
-            Task("gardening", "Mow the lawn", Priority.Medium),
-            Task("shopping", "Buy the groceries", Priority.High),
-            Task("painting", "Paint the fence", Priority.Medium)
-        )
         val allTasks = TaskRepository.allTasks()
-        assertEquals(expectedTasks, allTasks)
+        assertContains(allTasks, Task("cleaning", "Clean the house", Priority.Low))
+        assertContains(allTasks, Task("gardening", "Mow the lawn", Priority.Medium))
+        assertContains(allTasks, Task("shopping", "Buy the groceries", Priority.High))
+        assertContains(allTasks, Task("painting", "Paint the fence", Priority.Medium))
     }
 
 }
