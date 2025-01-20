@@ -1,5 +1,7 @@
 # Ktor tutorial
 
+[![Build](https://github.com/applethepeanut/tutorial-ktor/actions/workflows/build.yml/badge.svg)](https://github.com/applethepeanut/tutorial-ktor/actions/workflows/build.yml)
+
 A simple Ktor tutorial.
 
 - Created using the [Ktor Project Generator](https://start.ktor.io).
