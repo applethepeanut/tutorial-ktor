@@ -7,7 +7,7 @@ import io.ktor.server.testing.*
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import kotlin.test.assertContains
-s
+
 class TasksTest {
 
     @Test
