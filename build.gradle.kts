@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.ktor)
 }
 
-group = "com.atpfury.example"
+group = "com.tutorial"
 version = "0.0.1"
 
 application {

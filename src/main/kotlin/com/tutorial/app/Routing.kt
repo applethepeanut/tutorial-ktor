@@ -6,7 +6,7 @@ import io.ktor.server.routing.*
 import io.ktor.http.*
 import io.ktor.server.http.content.*
 import io.ktor.server.plugins.statuspages.*
-import com.tutorial.repo.tasks
+import com.tutorial.repo.TaskRepository.allTasks
 import com.tutorial.models.tasksAsTable
 
 fun Application.configureRouting() {
@@ -62,7 +62,7 @@ fun Application.configureRouting() {
         get("/tasks") {
             call.respondText(
                 contentType = ContentType.parse("text/html"),
-                text = tasks.tasksAsTable()
+                text = allTasks().tasksAsTable()
             )
         }
     }
